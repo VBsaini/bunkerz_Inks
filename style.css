@@ -14,7 +14,28 @@ nav {
   justify-content: space-between;
 }
 .logo {
+  display: flex;
   padding: 10px 0;
+}
+.logo img {
+  z-index: 10;
+}
+.img_container {
+  height: fit-content;
+  position: relative;
+  margin-left: 5px;
+  z-index: 2;
+}
+.img_container::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  border-radius: 5px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 .logo h1 {
   color: #fef06b;
