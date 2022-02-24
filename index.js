@@ -49,7 +49,7 @@ let options = {
 let callback = (entries, observer) => {
   entries.forEach((entry) => {
     if (!animationDone && entry.isIntersecting) {
-      update();
+      // update();
       animationDone = true;
     }
   });

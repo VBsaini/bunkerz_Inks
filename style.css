@@ -333,3 +333,83 @@ nav {
   font-size: 20px;
   font-family: Libre Baskerville;
 }
+.images_container {
+  display: flex;
+}
+.image {
+  width: 25%;
+}
+.images_img {
+  width: 100%;
+}
+.images_container_1 {
+  display: flex;
+}
+.images_1 {
+  width: 50%;
+}
+.images_1 img {
+  width: 100%;
+}
+.contact_container {
+  display: flex;
+  margin: 30px 0;
+}
+.address {
+  width: 50%;
+  text-align: center;
+}
+.icons_container {
+  display: flex;
+}
+.address {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.address h2 {
+  margin-bottom: 20px;
+  font-size: 34px;
+  font-family: "Courier New", Courier, monospace;
+}
+.address .location {
+  margin: 0 auto;
+  font-size: 18px;
+  color: gray;
+  margin-bottom: 40px;
+  width: 50%;
+}
+.icons_container {
+  padding-left: 30%;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 30px;
+}
+.icons_container i {
+  color: #cabe54;
+  font-size: 20px;
+  padding-right: 20px;
+}
+.contact_form {
+  display: flex;
+  flex-direction: column;
+}
+.contact_form_div {
+  margin: 0 10px;
+  margin-right: 30px;
+  width: 50%;
+}
+.contact_input {
+  outline: none;
+  border: none;
+  height: 50px;
+  padding-left: 10px;
+  background-color: #dfdfdf;
+  margin: 10px 0px;
+  font-family: "Raleway", sans-serif;
+}
+.message {
+  resize: none;
+  font-family: "Raleway", sans-serif;
+  padding: 15px 0 0 15px;
+  height: 200px;
+}
