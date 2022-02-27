@@ -101,6 +101,9 @@ nav {
 .background {
   background-color: rgba(0, 0, 0, 1);
 }
+.scroll_link.active p {
+  color: #fef06b;
+}
 .scroll_link:hover p {
   color: #fef06b;
 }
