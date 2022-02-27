@@ -6,3 +6,24 @@
 li {
   list-style: none;
 }
+::selection {
+  background-color: #69632e;
+  color: rgb(255, 255, 255);
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fef06b;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #817932;
+}

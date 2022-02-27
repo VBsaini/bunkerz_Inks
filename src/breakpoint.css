@@ -1,0 +1,144 @@
+@media screen and (max-width: 1200px) {
+  .footer {
+    flex-direction: column;
+  }
+  .footer .follow_us {
+    text-align: left;
+  }
+  .footer .follow_us li {
+    padding-left: 0 !important;
+  }
+  .content {
+    width: 75% !important;
+  }
+
+  .swiper_content h2 {
+    font-size: 40px !important;
+  }
+}
+
+@media screen and (max-width: 731px) {
+  .footer_two,
+  .footer_one {
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact_container {
+    flex-direction: column;
+  }
+  .contact_container .address,
+  .contact_form_div {
+    width: 100% !important;
+  }
+  .contact_form_div {
+    margin: 0 !important;
+    padding: 0 30px;
+  }
+  .contact_form_div .shine_btn {
+    align-self: center;
+  }
+  .footer .address,
+  .footer .working_hours,
+  .footer .follow_us,
+  .footer .gallery_footer {
+    text-align: left !important;
+    margin-top: 20px;
+    width: 100% !important;
+  }
+  .swiper_content h2 {
+    font-size: 30px !important;
+  }
+  .footer .address h2 {
+    text-align: left !important;
+  }
+  .working_hours ul li {
+    margin-left: 0 !important;
+  }
+  .content {
+    width: 100% !important;
+    padding: 0 30px;
+  }
+  .work_done {
+    flex-direction: column;
+  }
+  .work_one,
+  .work_two {
+    width: 100% !important;
+  }
+  .images_container_1 {
+    flex-direction: column;
+  }
+  .images_1 {
+    width: 100% !important;
+  }
+  .div.images_1 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+@media screen and (max-width: 600px) {
+  .logo h1 {
+    font-size: 25px !important;
+  }
+  .link {
+    font-size: 14px !important;
+  }
+  .what_we_do {
+    flex-direction: column;
+  }
+  .work_one,
+  .work_two {
+    flex-direction: column;
+  }
+  .what_div {
+    width: 100% !important;
+    padding: 0 20px;
+  }
+  .tattoo_div {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .swiper_content h2 {
+    font-size: 25px !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .swiper_content h2 {
+    font-size: 20px !important;
+  }
+  .swiper_content p {
+    font-size: 14px !important;
+  }
+}
+@media screen and (max-width: 450px) {
+  .icons_container {
+    padding-left: 15% !important;
+  }
+  .footer .icons_container {
+    padding-left: 0 !important;
+  }
+  .footer {
+    margin: 0 !important;
+  }
+  .logo h1 {
+    font-size: 18px !important;
+  }
+  .link {
+    padding: 20px 8px !important;
+    font-size: 12px !important;
+  }
+  nav {
+    padding: 0 10px !important;
+  }
+  footer {
+    padding: 160px 20px !important;
+    padding-bottom: 20px !important;
+  }
+}
+@media screen and (max-width: 340px) {
+  .contact_container .address .location {
+    min-width: 250px !important;
+  }
+}

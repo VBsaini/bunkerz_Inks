@@ -8,6 +8,9 @@ nav {
 .logo {
   display: flex;
   padding: 10px 0;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .logo img {
   z-index: 10;
@@ -70,8 +73,29 @@ nav {
 .link:hover::before {
   transform: scaleY(1);
 }
-.link a {
+.link p {
+  cursor: pointer;
   font-family: "Oswald", sans-serif;
   color: white;
+  transition: color 0.4s;
   text-decoration: none;
+}
+.autohide {
+  z-index: 100000000;
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+}
+.scrolled-down {
+  transform: translateY(-100%);
+  transition: all 0.3s ease-in-out;
+}
+.scrolled-up {
+  transform: translateY(0);
+  transition: all 0.3s ease-in-out;
+}
+.background {
+  background-color: rgba(0, 0, 0, 1);
+}
+.scroll_link:hover p {
+  color: #fef06b;
 }

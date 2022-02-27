@@ -1,0 +1,123 @@
+.gallery_header {
+  padding: 140px 0;
+  color: white;
+  font-size: 30px;
+  letter-spacing: 3px;
+  line-height: 30px;
+  font-family: "Raleway", sans-serif;
+  position: relative;
+}
+.gallery_header::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  z-index: -1;
+  top: 0;
+  background: url("../../assets/imgs/akin-cakiner-nkUFXi0JSX8-unsplash.jpg");
+}
+.spinner {
+  position: absolute;
+  transition: all 1s;
+  left: 0;
+  background-color: black;
+  z-index: 10000;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.loader,
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation: load7 1.8s infinite ease-in-out;
+  animation: load7 1.8s infinite ease-in-out;
+}
+.loader {
+  color: #ffffff;
+  font-size: 10px;
+  margin: 80px auto;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  top: 0;
+}
+.loader:before {
+  left: -3.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader:after {
+  left: 3.5em;
+}
+@-webkit-keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+@keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+.loading_container {
+  overflow: hidden;
+}
+.loading_img_container {
+  visibility: hidden;
+  overflow: hidden;
+}
+.dis_none {
+  opacity: 0;
+  pointer-events: none;
+}
+.images_container {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.gallery_img {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(1) brightness(0.6);
+  border-radius: 20px;
+  transition: all 0.5s;
+}
+.gallery_img:hover {
+  transform: scale(1.1);
+  box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 1);
+  filter: grayscale(0) brightness(1);
+}
+.gallery_img_container {
+  padding: 10px;
+  width: 25%;
+  min-width: 300px;
+}

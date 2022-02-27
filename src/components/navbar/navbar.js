@@ -1,26 +1,57 @@
 import "./navbar.css";
-import logo from "../../assets/imgs/yellow_logo_jpg-removebg.png";
 
-export function Navbar() {
+export const Navbar = (props) => {
+  document.addEventListener("DOMContentLoaded", function () {
+    let el_autohide = document.querySelector(".autohide");
+    if (el_autohide) {
+      var last_scroll_top = 0;
+      window.addEventListener("scroll", function () {
+        if (window.scrollY < 60) {
+          el_autohide.classList.remove("scrolled-up");
+          el_autohide.classList.remove("background");
+          el_autohide.classList.remove("scrolled-down");
+          document.querySelectorAll(".link").forEach((ele) => {
+            ele.classList.remove("scroll_link");
+          });
+        } else {
+          let scroll_top = window.scrollY;
+          if (scroll_top < last_scroll_top) {
+            el_autohide.classList.remove("scrolled-down");
+            el_autohide.classList.add("scrolled-up");
+            el_autohide.classList.add("background");
+            document.querySelectorAll(".link").forEach((ele) => {
+              ele.classList.add("scroll_link");
+            });
+          } else {
+            el_autohide.classList.remove("scrolled-up");
+            el_autohide.classList.add("scrolled-down");
+          }
+          last_scroll_top = scroll_top;
+        }
+      });
+    }
+  });
   return (
-    <nav>
+    <nav className="autohide">
       <div className="logo">
         <h1>Bunkerz Inks</h1>
-        <div className="img_container">
-          <img src={logo} width="40" height="40" alt="" />
-        </div>
       </div>
       <ul className="links_ul">
-        <li className="link active">
-          <a href="#">Home</a>
+        <li
+          className="link Home"
+          onClick={(e) => {
+            props.navigate("Home");
+          }}
+        >
+          <p>Home</p>
         </li>
-        <li className="link">
-          <a href="#">Gallery</a>
+        <li className="link Gallery" onClick={() => props.navigate("Gallery")}>
+          <p>Gallery</p>
         </li>
-        <li className="link">
-          <a href="#">Blogs</a>
+        <li className="link Blogs" onClick={() => props.navigate("Blogs")}>
+          <p>Blogs</p>
         </li>
       </ul>
     </nav>
   );
-}
+};

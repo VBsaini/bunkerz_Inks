@@ -1,14 +1,18 @@
-import { Navigation, Pagination, A11y } from "swiper";
+import { Navigation, Pagination, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import port_image_1 from "../../assets/imgs/portfolio-image-1.jpg";
 import port_image_2 from "../../assets/imgs/portfolio-image-2.jpg";
+import h1_team_1 from "../../assets/imgs/h1-team-img-1.jpg";
+import h1_team_2 from "../../assets/imgs/h1-team-img-2.jpg";
 import tatoo_img from "../../assets/imgs/clem-onojeghuo-8soQzdz9XXA-unsplash.jpg";
-import { useState, useEffect } from "react";
 import logo from "../../assets/imgs/yellow_logo_jpg-removebg.png";
-import { Navbar } from "../navbar/navbar";
+import h1_icon_1 from "../../assets/imgs/h1-icon1.png";
+import h1_icon_2 from "../../assets/imgs/h1-icon2.png";
+import h1_icon_3 from "../../assets/imgs/h1-icon3.png";
+import h1_icon_4 from "../../assets/imgs/h1-icon4.png";
 
 import "./Home.css";
 export function Home() {
@@ -64,7 +68,6 @@ export function Home() {
 
   return (
     <div>
-      <Navbar />
       <div className="header">
         <div className="logo_header_div">
           <img src={logo} className="logo_header" alt="logo" />
@@ -88,7 +91,6 @@ export function Home() {
             complete control over every aspect of your typography. Tons of
             shortcodes provide countless options.
           </p>
-          <button className="shine_btn">Read more</button>
         </div>
       </div>
       <div className="what_we_do">
@@ -128,7 +130,9 @@ export function Home() {
       </div>
       <div className="swipper_div">
         <Swiper
-          modules={[Navigation, Pagination, A11y]}
+          draggable={true}
+          autoplay={{ delay: 2000 }}
+          modules={[Navigation, Pagination, A11y, Autoplay]}
           spaceBetween={0}
           slidesPerView={1}
           navigation
@@ -183,39 +187,43 @@ export function Home() {
         </div>
       </div>
       <div className="work_done">
-        <div className="work_done_container">
-          <img src="./h1-icon1.png" alt="" />
-          <h3 className="count">283</h3>
-          <p>Tattoos & artworks</p>
+        <div className="work_one">
+          <div className="work_done_container">
+            <img src={h1_icon_1} alt="" />
+            <h3 className="count">283</h3>
+            <p>Tattoos & artworks</p>
+          </div>
+          <div className="work_done_container">
+            <img src={h1_icon_2} alt="" />
+            <h3 className="count">158</h3>
+            <p>Piercing done</p>
+          </div>
         </div>
-        <div className="work_done_container">
-          <img src="./h1-icon2.png" alt="" />
-          <h3 className="count">158</h3>
-          <p>Piercing done</p>
-        </div>
-        <div className="work_done_container">
-          <img src="./h1-icon3.png" alt="" />
-          <h3 className="count big">982</h3>
-          <p>Corrective makeup</p>
-        </div>
-        <div className="work_done_container">
-          <img src="./h1-icon4.png" alt="" />
-          <h3 className="count">221</h3>
-          <p>Custom tattoos done</p>
+        <div className="work_two">
+          <div className="work_done_container">
+            <img src={h1_icon_3} alt="" />
+            <h3 className="count big">982</h3>
+            <p>Corrective makeup</p>
+          </div>
+          <div className="work_done_container">
+            <img src={h1_icon_4} alt="" />
+            <h3 className="count">221</h3>
+            <p>Custom tattoos done</p>
+          </div>
         </div>
       </div>
       <div className="images_container">
         <div className="image">
-          <img src="./h1-team-img-1.jpg" alt="" className="images_img" />
+          <img src={h1_team_1} alt="" className="images_img" />
         </div>
         <div className="image">
-          <img src="./h1-team-img-2.jpg" alt="" className="images_img" />
+          <img src={h1_team_2} alt="" className="images_img" />
         </div>
         <div className="image">
-          <img src="./h1-team-img-1.jpg" alt="" className="images_img" />
+          <img src={h1_team_1} alt="" className="images_img" />
         </div>
         <div className="image">
-          <img src="./h1-team-img-2.jpg" alt="" className="images_img" />
+          <img src={h1_team_2} alt="" className="images_img" />
         </div>
       </div>
       <div className="contact_container">

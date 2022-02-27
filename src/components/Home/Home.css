@@ -33,6 +33,7 @@
   filter: grayscale(100%);
 }
 .logo_header_div {
+  min-width: 300px;
   width: 30%;
   z-index: 3;
   transform: scale(0.7);
@@ -294,6 +295,9 @@
   margin-bottom: 40px;
   width: 50%;
 }
+.contact_container .address .location {
+  min-width: 332px;
+}
 .icons_container {
   padding-left: 30%;
   font-family: Arial, Helvetica, sans-serif;
@@ -327,4 +331,13 @@
   font-family: "Raleway", sans-serif;
   padding: 15px 0 0 15px;
   height: 200px;
+}
+.swiper_content {
+  cursor: default;
+}
+.work_one,
+.work_two {
+  width: 50%;
+  justify-content: space-around;
+  display: flex;
 }
