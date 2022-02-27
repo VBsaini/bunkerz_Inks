@@ -38,6 +38,10 @@ export const Navbar = (props) => {
       </div>
       <ul className="links_ul">
         <li
+          style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;"
+          unselectable="on"
+          onselectstart="return false;"
+          onmousedown="return false;"
           className="link Home"
           onClick={(e) => {
             props.navigate("Home");
@@ -45,10 +49,24 @@ export const Navbar = (props) => {
         >
           <p>Home</p>
         </li>
-        <li className="link Gallery" onClick={() => props.navigate("Gallery")}>
+        <li
+          style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;"
+          unselectable="on"
+          onselectstart="return false;"
+          onmousedown="return false;"
+          className="link Gallery"
+          onClick={() => props.navigate("Gallery")}
+        >
           <p>Gallery</p>
         </li>
-        <li className="link Blogs" onClick={() => props.navigate("Blogs")}>
+        <li
+          style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;"
+          unselectable="on"
+          onselectstart="return false;"
+          onmousedown="return false;"
+          className="link Blogs"
+          onClick={() => props.navigate("Blogs")}
+        >
           <p>Blogs</p>
         </li>
       </ul>
