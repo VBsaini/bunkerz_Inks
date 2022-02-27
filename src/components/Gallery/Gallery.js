@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Gallery.css";
+import InfiniteScroll from "react-infinite-scroller";
 
 function importAll(r) {
   let images = [];
@@ -16,28 +17,55 @@ const images = importAll(
 
 export const Gallery = () => {
   const [count, setCount] = useState(0);
+  const [hasMore, setHasMore] = useState(true);
+  const [imgCount, setImgCount] = useState(20);
   let values = Object.values(images);
-  if (count === values.length - 1) {
+  if (true) {
     document.querySelector("body").style.overflowY = "scroll";
     document.querySelector("nav").style.display = "flex";
-    document
-      .querySelector(".gallery_header")
-      .classList.remove("loading_container");
-    document
-      .querySelector(".images_container")
-      .classList.remove("loading_img_container");
-    document.querySelector(".spinner").classList.add("dis_none");
   }
+  const loadFunc = () => {
+    if (!(imgCount >= values.length)) {
+      setImgCount(imgCount + 20);
+    } else {
+      setImgCount(values.length);
+      setHasMore(false);
+    }
+  };
   return (
     <div>
-      <div className="gallery_header loading_container">
+      <div className="gallery_header ">
         <h2>GALLERY</h2>
       </div>
-      <div className="spinner">
+      <div className="spinner dis_none">
         <div className="loader"></div>
       </div>
-      <div className="images_container loading_img_container">
-        {values.map((value) => (
+      <div className="images_containersa ">
+        <InfiniteScroll
+          className="images_container"
+          pageStart={0}
+          hasMore={hasMore}
+          loadMore={loadFunc}
+          loader={
+            <div className="loader" key={0}>
+              Loading ...
+            </div>
+          }
+        >
+          {values.slice(0, imgCount).map((value) => (
+            <div className="gallery_img_container" key={value}>
+              <img
+                className="gallery_img"
+                src={value}
+                alt=""
+                onLoad={() => {
+                  setCount(count + 1);
+                }}
+              ></img>
+            </div>
+          ))}
+        </InfiniteScroll>
+        {/* {values.slice(0, 20).map((value) => (
           <div className="gallery_img_container" key={value}>
             <img
               className="gallery_img"
@@ -48,7 +76,7 @@ export const Gallery = () => {
               }}
             ></img>
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   );
