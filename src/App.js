@@ -34,8 +34,6 @@ function App() {
         setComponent(Home);
         break;
       case "Gallery":
-        document.querySelector("body").style.overflowY = "hidden";
-        document.querySelector("nav").style.display = "none";
         window.scrollTo(0, 0);
         setComponent(<Gallery />);
         break;

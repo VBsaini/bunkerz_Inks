@@ -12,7 +12,7 @@ function importAll(r) {
 }
 
 const images = importAll(
-  require.context("../../assets/gallery_images", false, /\.(png|jpe?g|svg)$/)
+  require.context("../../assets/gallery", false, /\.(webp)$/)
 );
 
 export const Gallery = () => {
@@ -20,10 +20,6 @@ export const Gallery = () => {
   const [hasMore, setHasMore] = useState(true);
   const [imgCount, setImgCount] = useState(20);
   let values = Object.values(images);
-  if (true) {
-    document.querySelector("body").style.overflowY = "scroll";
-    document.querySelector("nav").style.display = "flex";
-  }
   const loadFunc = () => {
     if (!(imgCount >= values.length)) {
       setImgCount(imgCount + 20);
@@ -36,9 +32,6 @@ export const Gallery = () => {
     <div>
       <div className="gallery_header ">
         <h2>GALLERY</h2>
-      </div>
-      <div className="spinner dis_none">
-        <div className="loader"></div>
       </div>
       <div className="images_containersa ">
         <InfiniteScroll
