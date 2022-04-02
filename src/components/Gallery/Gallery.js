@@ -58,18 +58,6 @@ export const Gallery = () => {
             </div>
           ))}
         </InfiniteScroll>
-        {/* {values.slice(0, 20).map((value) => (
-          <div className="gallery_img_container" key={value}>
-            <img
-              className="gallery_img"
-              src={value}
-              alt=""
-              onLoad={() => {
-                setCount(count + 1);
-              }}
-            ></img>
-          </div>
-        ))} */}
       </div>
     </div>
   );

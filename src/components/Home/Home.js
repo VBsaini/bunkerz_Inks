@@ -5,17 +5,23 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import port_image_1 from "../../assets/imgs/portfolio-image-1.jpg";
 import port_image_2 from "../../assets/imgs/portfolio-image-2.jpg";
-import h1_team_1 from "../../assets/imgs/h1-team-img-1.jpg";
-import h1_team_2 from "../../assets/imgs/h1-team-img-2.jpg";
-import tatoo_img from "../../assets/imgs/clem-onojeghuo-8soQzdz9XXA-unsplash.jpg";
+import port_image_3 from "../../assets/imgs/portfolio-image-3.jpg";
+import port_image_4 from "../../assets/imgs/portfolio-image-4.jpg";
+import tatoo_img from "../../assets/imgs/tatto.webp";
+import painting_img from "../../assets/imgs/BF927290-B1DC-4962-AB49-FBA3D474956A.JPG";
+import piercing_img from "../../assets/imgs/piercing.webp";
 import logo from "../../assets/imgs/yellow_logo_jpg-removebg.png";
 import h1_icon_1 from "../../assets/imgs/h1-icon1.png";
 import h1_icon_2 from "../../assets/imgs/h1-icon2.png";
 import h1_icon_3 from "../../assets/imgs/h1-icon3.png";
 import h1_icon_4 from "../../assets/imgs/h1-icon4.png";
+import emailjs from "@emailjs/browser";
+import React, { useRef } from "react";
 
 import "./Home.css";
 export function Home() {
+  const form = useRef();
+
   function update() {
     var counters = document.querySelectorAll(".count");
     var countersQuantity = counters.length;
@@ -65,7 +71,25 @@ export function Home() {
   target.forEach((ele) => {
     observer.observe(ele);
   });
-
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_2sfpitl",
+        "template_ephqxmo",
+        form.current,
+        "KossvKSFi2tAabehc"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
   return (
     <div>
       <div className="header">
@@ -76,32 +100,32 @@ export function Home() {
       <div className="estd">
         <div className="content">
           <h2>
-            EST <span className="d">D</span> 1980
+            EST <span className="d">D</span> 2010
           </h2>
           <p className="designed">
-            Designed and built with care, filled with creative elements and
-            useful options, and completely user-friendly. Set up your website
-            quickly.
+            Bunkerz Inks is a place of creative minds thinking alike to create a
+            unique experience for you. Beautiful ideas create countless options
+            and with our experience we can customize your abstract ideas into a
+            strong wedge of permanent memory for you.
           </p>
           <p className="text">
-            Edge Themes give you everything you need to create an amazing
-            website. Designed and built with care, filled with creative elements
-            and useful options, and completely user-friendly. Set up your
-            website quickly and with ease. With Edge Themes you can have
-            complete control over every aspect of your typography. Tons of
-            shortcodes provide countless options.
+            Founded in 2010, our Founder Bharat comes from a medical background
+            and hence understands that Hygiene is one of the most imperative
+            factors of getting inked. Our peers and other artists create a
+            consortium of unique tattoos that give you an adjective that would
+            stay with you with the rest of your life.
           </p>
         </div>
       </div>
       <div className="what_we_do">
         <div className="piercing_div what_div">
-          <img src={tatoo_img} alt="" />
+          <img src={piercing_img} alt="" />
           <div className="what_content">
             <h3>PIERCING</h3>
             <p>
-              With Edge Themes you can have complete control over every aspect
-              of your typography. Choose from the extensive collection of Google
-              Fonts
+              One of the most experienced Piercing artists in North India with
+              experience in Medical Industry. Belly piercing, Dermal piercing,
+              Clit piercing, Nipple piercing is something that we specialise in.
             </p>
           </div>
         </div>
@@ -109,21 +133,20 @@ export function Home() {
           <div className="what_content">
             <h3>TATTOO</h3>
             <p>
-              With Edge Themes you can have complete control over every aspect
-              of your typography. Choose from the extensive collection of Google
-              Fonts
+              Experience customised tattoos with unique abstract cohesiveness.
+              Choose from Pop, Trendy, Hipster, Imperial and Traditional tattoo
             </p>
           </div>
           <img src={tatoo_img} alt="" />
         </div>
         <div className="painting what_div">
-          <img src={tatoo_img} alt="" />
+          <img src={painting_img} alt="" />
           <div className="what_content">
             <h3>PAINTING</h3>
             <p>
-              With Edge Themes you can have complete control over every aspect
-              of your typography. Choose from the extensive collection of Google
-              Fonts
+              Our artists don't just sit down and tattoo.. They thrive for space
+              to curate a perfectly balanced art, on canvas, on wood, metal,
+              walls, t-shirts, (you name it, we do it)
             </p>
           </div>
         </div>
@@ -141,37 +164,38 @@ export function Home() {
           <SwiperSlide>
             <div className="swiper_content">
               <h2>
-                "I could look at a certain Tattoo, it always reminds me of a
-                certain time in my life."
+                "Good experience at the studio, very creative and professional
+                artist are there. Thanks for the tattoo bharat"
               </h2>
-              <p>Joe biden</p>
+              <p>Yogesh kumar</p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="swiper_content">
               <h2>
-                "I could look at a certain Tattoo, it always reminds me of a
-                certain time in my life."
+                "The best tattoo artist in Delhi, my brother got his tattoo made
+                from here, even I got my tattoos made from here!"
               </h2>
-              <p>Joe biden</p>
+              <p>Era Sundriyal</p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="swiper_content">
               <h2>
-                "I could look at a certain Tattoo, it always reminds me of a
-                certain time in my life."
+                "Trustable and professional..Studio has a different vibe. Go and
+                have a best experience of your tattoo."
               </h2>
-              <p>Joe biden</p>
+              <p>jatin gera</p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="swiper_content">
               <h2>
-                "I could look at a certain Tattoo, it always reminds me of a
-                certain time in my life."
+                "They were amazing people and service was just amazing. I will
+                100% recommend going to Bunkers Inks Tattoo and Piercing
+                Studio."
               </h2>
-              <p>Joe biden</p>
+              <p>Debatri Pramanik</p>
             </div>
           </SwiperSlide>
         </Swiper>
@@ -182,8 +206,8 @@ export function Home() {
           <img src={port_image_2} alt="" />
         </div>
         <div className="div images_1">
-          <img src={port_image_2} alt="" />
-          <img src={port_image_1} alt="" />
+          <img src={port_image_3} alt="" />
+          <img src={port_image_4} alt="" />
         </div>
       </div>
       <div className="work_done">
@@ -212,26 +236,11 @@ export function Home() {
           </div>
         </div>
       </div>
-      <div className="images_container">
-        <div className="image">
-          <img src={h1_team_1} alt="" className="images_img" />
-        </div>
-        <div className="image">
-          <img src={h1_team_2} alt="" className="images_img" />
-        </div>
-        <div className="image">
-          <img src={h1_team_1} alt="" className="images_img" />
-        </div>
-        <div className="image">
-          <img src={h1_team_2} alt="" className="images_img" />
-        </div>
-      </div>
       <div className="contact_container">
         <div className="address">
-          <h2>NYC OFFICE</h2>
+          <h2>STUDIO:</h2>
           <p className="location">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-            fermentum nulla ac.
+            13-A, First Floor, Lake side Hauz Khas Village Delhi 110016
           </p>
           <div className="icons_container">
             <i className="fa-solid fa-location-pin"></i>
@@ -247,16 +256,23 @@ export function Home() {
           </div>
         </div>
         <div className="contact_form_div">
-          <form action="" className="contact_form">
+          <form
+            action=""
+            ref={form}
+            onSubmit={sendEmail}
+            className="contact_form"
+          >
             <input
               className="contact_input"
               required
+              name="name"
               type="text"
               placeholder="NAME"
             />
             <input
               className="contact_input"
               required
+              name="email"
               type="text"
               placeholder="E-MAIL"
             />
@@ -264,6 +280,7 @@ export function Home() {
               className="contact_input message"
               required
               type="text"
+              name="message"
               placeholder="MESSAGE"
             ></textarea>
             <button type="submit" className="shine_btn">

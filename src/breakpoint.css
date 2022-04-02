@@ -27,6 +27,15 @@
   .contact_container {
     flex-direction: column;
   }
+  div.div.images_1 {
+    margin-left: 0 !important;
+  }
+  div.div.images_1 img {
+    padding-top: 5px;
+  }
+  div.div.images_1 img:last-child {
+    padding-top: 10px !important;
+  }
   .contact_container .address,
   .contact_form_div {
     width: 100% !important;

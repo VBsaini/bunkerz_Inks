@@ -7,7 +7,7 @@ import { Gallery } from "./components/Gallery/Gallery";
 import { Blogs } from "./components/blogs/Blogs";
 
 function App() {
-  const [component, setComponent] = useState(Home);
+  const [component, setComponent] = useState("");
   const [navigation, setNavigation] = useState("Home");
   useEffect(() => {
     let item = localStorage.getItem("navigation");
@@ -31,7 +31,7 @@ function App() {
     switch (navigation) {
       case "Home":
         window.scrollTo(0, 0);
-        setComponent(Home);
+        setComponent("");
         break;
       case "Gallery":
         window.scrollTo(0, 0);
@@ -52,7 +52,7 @@ function App() {
   return (
     <div className="App">
       <Navbar navigate={Nav} />
-      {component}
+      {component ? component : <Home />}
       <Footer navigate={Nav} />
     </div>
   );
