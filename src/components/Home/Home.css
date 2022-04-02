@@ -122,15 +122,18 @@
   opacity: 0;
   transform: translateX(-100px) skewX(-15deg);
 }
-.shine_btn:hover {
+.shine_btn:hover,
+.shine_btn:focus {
   cursor: pointer;
 }
-.shine_btn:hover:before {
+.shine_btn:hover:before,
+.shine_btn:focus:before {
   transform: translateX(300px) skewX(-15deg);
   opacity: 0.6;
   transition: 0.7s;
 }
-.shine_btn:hover:after {
+.shine_btn:hover:after,
+.shine_btn:focus:after {
   transform: translateX(300px) skewX(-15deg);
   opacity: 1;
   transition: 0.7s;

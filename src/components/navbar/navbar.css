@@ -75,7 +75,8 @@ nav {
 .active::before {
   transform: scaleY(1);
 }
-.link:hover::before {
+.link:hover::before,
+.link:focus::before {
   transform: scaleY(1);
 }
 .link p {
@@ -104,6 +105,7 @@ nav {
 .scroll_link.active p {
   color: #fef06b;
 }
-.scroll_link:hover p {
+.scroll_link:hover p,
+.scroll_link:focus p {
   color: #fef06b;
 }

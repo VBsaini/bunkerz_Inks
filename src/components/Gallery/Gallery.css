@@ -31,7 +31,8 @@
   border-radius: 20px;
   transition: all 0.5s;
 }
-.gallery_img:hover {
+.gallery_img:hover,
+.gallery_img:focus {
   transform: scale(1.1);
   box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 1);
   filter: grayscale(0) brightness(1);
